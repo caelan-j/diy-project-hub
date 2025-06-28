@@ -8,20 +8,8 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="logo">DIY Project Hub</a>
-
-            <button class="menu-toggle" onclick="toggleNav()">☰</button>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="all-projects.html">Projects</a></li>
-                <li><a href="tool-packages.html">Tool Packages</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Placeholder where navbar will load -->
+    <div id="navbar"></div>
 
     <main class="project-container">
         <!-- Title -->
@@ -64,23 +52,10 @@
         <p>&copy; 2025 DIY Project Hub</p>
     </footer>
 
-    <script>
-        // Toggle menu on click
-        function toggleNav() {
-            const nav = document.getElementById("navLinks");
-            nav.classList.toggle("show");
-        }
-
-        // Close menu when clicking outside of it
-        window.addEventListener("click", function (event) {
-            const menu = document.getElementById("navLinks");
-            const toggleButton = document.querySelector(".menu-toggle");
-
-            // If click is outside the menu and toggle button, close it
-            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
-                menu.classList.remove("show");
-            }
-        });
+    <!-- Navbar Java-->
+    <script type="module">
+        import { loadNavbar } from "./js/load-navbar.js";
+        loadNavbar();
     </script>
 
 </body>
