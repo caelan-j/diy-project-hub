@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raised Garden Bed</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">DIY Project Hub</a>
+
+            <button class="menu-toggle" onclick="toggleNav()">☰</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all-projects.html">Projects</a></li>
+                <li><a href="tool-packages.html">Tool Packages</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-container">
+        <!-- Title -->
+        <h1 class="project-title">Raised Garden Bed</h1>
+
+        <!-- Description -->
+        <p class="project-description">
+            Build a durable 4x8 raised garden bed using cedar planks and basic tools. Great for growing veggies and herbs at home!
+        </p>
+
+        <!-- YouTube Video -->
+        <div class="project-video">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Materials -->
+        <h2>Materials & Tools</h2>
+        <ul class="project-materials">
+            <li>6x cedar 2x6 boards</li>
+            <li>Deck screws (2.5”)</li>
+            <li>Electric drill</li>
+            <li>Measuring tape</li>
+            <li>Optional: corner brackets</li>
+        </ul>
+
+        <a href="https://homedepot.com/your-prefilled-cart" class="material-button">🛒 View Cart on Home Depot</a>
+
+        <!-- Instructions -->
+        <h2>Step-by-Step Instructions</h2>
+        <ol class="project-instructions">
+            <li>Cut cedar boards to desired lengths (2x 8ft, 2x 4ft).</li>
+            <li>Drill pilot holes in corners.</li>
+            <li>Screw boards together to form a rectangle.</li>
+            <li>Level ground where the bed will go.</li>
+            <li>Place and fill with soil.</li>
+        </ol>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DIY Project Hub</p>
+    </footer>
+
+    <script>
+        // Toggle menu on click
+        function toggleNav() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("show");
+        }
+
+        // Close menu when clicking outside of it
+        window.addEventListener("click", function (event) {
+            const menu = document.getElementById("navLinks");
+            const toggleButton = document.querySelector(".menu-toggle");
+
+            // If click is outside the menu and toggle button, close it
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>

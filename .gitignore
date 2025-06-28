@@ -1,0 +1,13 @@
+# Ignore VS/IDE system files
+.vs/
+.vscode/
+*.vsidx
+*.user
+*.suo
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Other optional ignores
+node_modules/
