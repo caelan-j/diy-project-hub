@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DIY Project Hub</title>
     <link rel="stylesheet" href="css/style.css" />
-    
 </head>
 <body>
     <!-- Header -->
@@ -37,40 +36,42 @@
         <!-- Home Page Card Links -->
         <section class="homepage-links">
             <div class="link-card">
-                <a href="begginer-projects.html">
+                <a href="beginner-projects.html">
                     <img src="images/beginner.jpg" alt="Beginner Projects" />
-                    <h2> Beginner Projects </h2>
-                    <p>See our top weekend DIY picks, curated for beginners </p>
+                    <h2>Beginner Projects</h2>
+                    <p>See our top weekend DIY picks, curated for beginners</p>
                 </a>
             </div>
 
             <div class="link-card">
                 <a href="intermediate-projects.html">
                     <img src="images/intermediate.jpg" alt="Intermediate Projects" />
-                    <h2> Intermediate Projects</h2>
-                    <p> See our top weekend DIY picks, curated for intermediate builders </p>
+                    <h2>Intermediate Projects</h2>
+                    <p>See our top weekend DIY picks, curated for intermediate builders</p>
                 </a>
             </div>
 
             <div class="link-card">
                 <a href="advanced-projects.html">
                     <img src="images/advanced.jpg" alt="Advanced Projects" />
-                    <h2> Advanced Projects</h2>
-                    <p> See our top weekend DIY picks, curated for pros </p>
+                    <h2>Advanced Projects</h2>
+                    <p>See our top weekend DIY picks, curated for pros</p>
                 </a>
             </div>
+
             <div class="link-card">
                 <a href="tool-packages.html">
                     <img src="images/tools.jpg" alt="Tool Packages" />
-                    <h2> Tool Packages</h2>
+                    <h2>Tool Packages</h2>
                     <p>Everything you need in one kit. Browse tool bundles for any experience level.</p>
                 </a>
             </div>
+
             <div class="link-card">
                 <a href="become-a-builder.html">
                     <img src="images/builder.jpg" alt="Become A Builder" />
-                    <h2> Become A Builder</h2>
-                    <p> Connect with clients and inspire new builds </p>
+                    <h2>Become A Builder</h2>
+                    <p>Connect with clients and inspire new builds</p>
                 </a>
             </div>
         </section>
@@ -78,7 +79,6 @@
         <div class="browse-button-container">
             <a href="all-projects.html" class="browse-button">🔎 Browse All Projects</a>
         </div>
-
     </main>
 
     <footer>
@@ -97,22 +97,19 @@
             const menu = document.getElementById("navLinks");
             const toggleButton = document.querySelector(".menu-toggle");
 
-            // If click is outside the menu and toggle button, close it
             if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
                 menu.classList.remove("show");
             }
         });
     </script>
 
-    <!-- Java for Search Bar -->
+    <!-- JS for Modular Search Bar -->
     <script type="module">
-        import { setupProjectRedirectFilters } from './js/search-router.js';
+        import { setupProjectRedirectFilters } from "./js/search-router.js";
 
-        window.addEventListener('DOMContentLoaded', () => {
-            setupProjectRedirectFilters(); // you can pass custom tags/categories if needed
+        window.addEventListener("DOMContentLoaded", () => {
+            setupProjectRedirectFilters(); // default tags/categories are fine
         });
     </script>
-
-</body>         
-
-</html >
+</body>
+</html>

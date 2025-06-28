@@ -12,9 +12,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <a href="index.html" class="logo">DIY Project Hub</a>
-
             <button class="menu-toggle" onclick="toggleNav()">☰</button>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="all-projects.html">Projects</a></li>
@@ -28,27 +26,17 @@
     <main class="project-directory">
         <h1>All Projects</h1>
 
-        <div class="project-controls">
-            <input type="text" id="searchInput" placeholder="Search projects..." />
-
-            <select id="categoryFilter">
-                <option value="all">All Skill Levels</option>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-            </select>
-        </div>
-
-        <!-- Search Bar and Filter Tags -->
+        <!-- Search Bar and Filter Tags (modular insert) -->
         <div id="projectSearchBar"></div>
 
         <section class="project-grid">
 
             <!-- Project Card 1 -->
-            <a href="projects/garden-bed.html" class="project-card">
-                data-title="raised garden bed"
-                data-category="beginner"
-                data-tags="outdoor,woodworking">
+            <a href="projects/garden-bed.html"
+               class="project-card"
+               data-title="raised garden bed"
+               data-category="beginner"
+               data-tags="outdoor,woodworking">
                 <img src="images/garden-bed.jpg" alt="Raised Garden Bed" />
                 <div class="card-content">
                     <h2>Raised Garden Bed</h2>
@@ -57,10 +45,11 @@
             </a>
 
             <!-- Project Card 2 -->
-            <a href="projects/firepit.html" class="project-card">
-                data-title="backyard fire pit"
-                data-category="beginner"
-                data-tags="outdoor,woodworking">
+            <a href="projects/firepit.html"
+               class="project-card"
+               data-title="backyard fire pit"
+               data-category="intermediate"
+               data-tags="outdoor,woodworking">
                 <img src="images/firepit.jpg" alt="Backyard Fire Pit">
                 <div class="card-content">
                     <h2>Backyard Fire Pit</h2>
@@ -68,7 +57,6 @@
                 </div>
             </a>
 
-            <!-- Add more cards here -->
         </section>
     </main>
 
@@ -76,30 +64,53 @@
         <p>&copy; 2025 DIY Project Hub</p>
     </footer>
 
-    <!-- Java for search bar -->
+    <!-- Toggle navbar -->
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("show");
+        }
+
+        window.addEventListener("click", function (event) {
+            const menu = document.getElementById("navLinks");
+            const toggleButton = document.querySelector(".menu-toggle");
+
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+    </script>
+
+    <!-- Search/Filter logic -->
     <script type="module">
-        import { setupProjectRedirectFilters } from './js/search-router.js';
+        import { setupProjectRedirectFilters } from "./js/search-router.js";
 
-        window.addEventListener('DOMContentLoaded', () => {
-            setupProjectRedirectFilters(); // you can pass custom tags/categories if needed
-            window.addEventListener("DOMContentLoaded", () => {
-                const urlParams = new URLSearchParams(window.location.search);
-                const searchTerm = urlParams.get("search") || "";
-                const selectedTag = urlParams.get("tag") || "all";
-                const selectedCategory = urlParams.get("category") || "all";
+        window.addEventListener("DOMContentLoaded", () => {
+            setupProjectRedirectFilters();
 
-                document.getElementById("searchInput").value = searchTerm;
-                document.getElementById("categoryFilter").value = selectedCategory;
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchTerm = urlParams.get("search") || "";
+            const selectedTag = urlParams.get("tag") || "all";
+            const selectedCategory = urlParams.get("category") || "all";
 
-                // Set tag
-                const activeTagButton = document.querySelector(`.tag-button[data-tag="${selectedTag}"]`);
-                if (activeTagButton) {
-                    document.querySelectorAll(".tag-button").forEach(b => b.classList.remove("active"));
-                    activeTagButton.classList.add("active");
-                }
+            const cards = document.querySelectorAll(".project-card");
 
-                filterProjects(); // your existing function that reads input and filters cards
-            });
+            function filterProjects() {
+                cards.forEach(card => {
+                    const title = card.dataset.title || "";
+                    const cat = card.dataset.category || "";
+                    const tags = (card.dataset.tags || "").split(",");
+
+                    const matchesSearch = title.includes(searchTerm.toLowerCase());
+                    const matchesCategory = selectedCategory === "all" || cat === selectedCategory;
+                    const matchesTag = selectedTag === "all" || tags.includes(selectedTag);
+
+                    card.style.display = (matchesSearch && matchesCategory && matchesTag) ? "block" : "none";
+                });
+            }
+
+            filterProjects();
+        });
     </script>
 
 </body>
