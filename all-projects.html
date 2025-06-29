@@ -57,6 +57,15 @@
         loadLayout();
     </script>
 
+    <!-- JS for Modular Search Bar -->
+    <script type="module">
+        import { setupProjectRedirectFilters } from "./js/search-router.js";
+
+        window.addEventListener("DOMContentLoaded", () => {
+            setupProjectRedirectFilters(); // default tags/categories are fine
+        });
+    </script>
+
     <!-- Search/Filter logic -->
     <script type="module">
         import { setupProjectRedirectFilters } from "js/search-router.js";
