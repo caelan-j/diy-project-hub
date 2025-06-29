@@ -1,8 +1,7 @@
 export function setupProjectRedirectFilters({
     containerSelector = "#projectSearchBar",
     destination = "all-projects.html",
-    tags = ["outdoor", "indoor", "woodworking", "tools", "beginner", "intermediate", "advanced"],
-    
+    tags = ["outdoor", "indoor", "woodworking", "tools", "beginner", "intermediate", "advanced"]
 } = {}) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
@@ -18,9 +17,7 @@ export function setupProjectRedirectFilters({
     </div>
   `;
 
-    // Event handlers
     const searchInput = container.querySelector("#quickSearch");
-    const categorySelect = container.querySelector("#quickCategory");
     const tagButtons = container.querySelectorAll(".quick-tags button");
 
     let selectedTag = "";
@@ -38,13 +35,10 @@ export function setupProjectRedirectFilters({
         if (e.key === "Enter") redirect();
     });
 
-    categorySelect.addEventListener("change", redirect);
-
     function redirect() {
         const params = new URLSearchParams();
         if (searchInput.value.trim()) params.set("search", searchInput.value.trim());
         if (selectedTag) params.set("tag", selectedTag);
-        if (categorySelect.value) params.set("category", categorySelect.value);
         window.location.href = `${destination}?${params.toString()}`;
     }
 
