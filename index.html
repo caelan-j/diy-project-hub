@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DIY Project Hub</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
     <!-- Header -->
@@ -72,13 +72,13 @@
 
     <!-- Java for layout -->
     <script type="module">
-        import { loadLayout } from "js/load-layout.js";
+        import { loadLayout } from "./js/load-layout.js";
         loadLayout();
     </script>
 
     <!-- JS for Modular Search Bar -->
     <script type="module">
-        import { setupProjectRedirectFilters } from "js/search-router.js";
+        import { setupProjectRedirectFilters } from "./js/search-router.js";
 
         window.addEventListener("DOMContentLoaded", () => {
             setupProjectRedirectFilters(); // default tags/categories are fine
