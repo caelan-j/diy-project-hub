@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All DIY Projects</title>
+    <base href="/project-site/">
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <h1>All Projects</h1>
+    </header>
 
     <!-- Navbar -->
     <div id="navbar"></div>
@@ -59,7 +65,7 @@
 
     <!-- JS for Modular Search Bar -->
     <script type="module">
-        import { setupProjectRedirectFilters } from "./js/search-router.js";
+        import { setupProjectRedirectFilters } from "js/search-router.js";
 
         window.addEventListener("DOMContentLoaded", () => {
             setupProjectRedirectFilters(); // default tags/categories are fine

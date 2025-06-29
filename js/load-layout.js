@@ -12,8 +12,8 @@ export async function loadLayout() {
         }
     };
 
-    await insertHTML("#navbar", "../components/navbar.html");
-    await insertHTML("#footer", "../components/footer.html");
+    await insertHTML("#navbar", "components/navbar.html");
+    await insertHTML("#footer", "components/footer.html");
 
     // Reattach navbar toggle logic after navbar is loaded
     const toggleNav = () => {
