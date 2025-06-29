@@ -1,8 +1,8 @@
 export function setupProjectRedirectFilters({
     containerSelector = "#projectSearchBar",
     destination = "all-projects.html",
-    tags = ["outdoor", "indoor", "woodworking", "tools"],
-    categories = ["beginner", "intermediate", "advanced"]
+    tags = ["outdoor", "indoor", "woodworking", "tools", "beginner", "intermediate", "advanced"],
+    
 } = {}) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
@@ -11,10 +11,6 @@ export function setupProjectRedirectFilters({
     container.innerHTML = `
     <div class="quick-search-controls">
       <input type="text" id="quickSearch" placeholder="Search projects..." />
-      <select id="quickCategory">
-        <option value="">All Skill Levels</option>
-        ${categories.map(c => `<option value="${c}">${capitalize(c)}</option>`).join("")}
-      </select>
     </div>
     <div class="quick-tags">
       <button data-tag="">All</button>
