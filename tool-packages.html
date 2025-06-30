@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tool Packages</title>
+    <base href="/diy-project-hub/" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <h1>Tool Packages</h1>
+    </header>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <main class="tool-package-directory">
+        <!-- Search Bar and Filter Tags -->
+        <div id="projectSearchBar"></div>
+
+        <section class="tool-grid">
+
+            <!-- Project Card 1 -->
+            <a href="projects/garden-bed.html"
+               class="project-card"
+               data-title="raised garden bed"
+               data-category="beginner"
+               data-tags="outdoor,woodworking">
+                <img src="images/garden-bed.jpg" alt="Raised Garden Bed" />
+                <div class="card-content">
+                    <h2>Raised Garden Bed</h2>
+                    <p>Beginner | 2–3 hrs</p>
+                </div>
+            </a>
+
+            <!-- Project Card 2 -->
+            <a href="projects/firepit.html"
+               class="project-card"
+               data-title="backyard fire pit"
+               data-category="intermediate"
+               data-tags="outdoor,woodworking">
+                <img src="images/firepit.jpg" alt="Backyard Fire Pit">
+                <div class="card-content">
+                    <h2>Backyard Fire Pit</h2>
+                    <p>Intermediate | 4–5 hrs</p>
+                </div>
+            </a>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Java for layout and search bar -->
+    <script type="module" src="js/init.js"></script>
+
+
+    <!-- Search/Filter logic -->
+    <script type="module">
+        import { setupProjectRedirectFilters } from "js/search-router.js";
+
+        window.addEventListener("DOMContentLoaded", () => {
+            setupProjectRedirectFilters();
+
+            const params = new URLSearchParams(window.location.search);
+            const searchTerm = params.get("search")?.toLowerCase() || "";
+            const selectedTag = params.get("tag") || "";
+
+            const cards = document.querySelectorAll(".project-card");
+
+            cards.forEach(card => {
+                const title = (card.dataset.title || "").toLowerCase();
+                const tags = (card.dataset.tags || "").split(",");
+
+                const matchesSearch = title.includes(searchTerm);
+                const matchesTag = selectedTag === "" || tags.includes(selectedTag);
+
+                card.style.display = (matchesSearch && matchesTag) ? "block" : "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
