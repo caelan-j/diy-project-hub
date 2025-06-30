@@ -65,28 +65,21 @@
         window.addEventListener("DOMContentLoaded", () => {
             setupProjectRedirectFilters();
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const searchTerm = urlParams.get("search") || "";
-            const selectedTag = urlParams.get("tag") || "all";
-            const selectedCategory = urlParams.get("category") || "all";
+            const params = new URLSearchParams(window.location.search);
+            const searchTerm = params.get("search")?.toLowerCase() || "";
+            const selectedTag = params.get("tag") || "";
 
             const cards = document.querySelectorAll(".project-card");
 
-            function filterProjects() {
-                cards.forEach(card => {
-                    const title = card.dataset.title || "";
-                    const cat = card.dataset.category || "";
-                    const tags = (card.dataset.tags || "").split(",");
+            cards.forEach(card => {
+                const title = (card.dataset.title || "").toLowerCase();
+                const tags = (card.dataset.tags || "").split(",");
 
-                    const matchesSearch = title.includes(searchTerm.toLowerCase());
-                    const matchesCategory = selectedCategory === "all" || cat === selectedCategory;
-                    const matchesTag = selectedTag === "all" || tags.includes(selectedTag);
+                const matchesSearch = title.includes(searchTerm);
+                const matchesTag = selectedTag === "" || tags.includes(selectedTag);
 
-                    card.style.display = (matchesSearch && matchesCategory && matchesTag) ? "block" : "none";
-                });
-            }
-
-            filterProjects();
+                card.style.display = (matchesSearch && matchesTag) ? "block" : "none";
+            });
         });
     </script>
 
