@@ -17,24 +17,16 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 40px;
     margin-bottom: 12px;
     justify-content: center;
 }
-
-    .quick-search-controls input,
-    .quick-search-controls select {
-        padding: 10px;
-        font-size: 1rem;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        width: 220px;
-        max-width: 100%;
-    }
 
 .quick-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 40px;
     justify-content: center;
 }
 
@@ -156,13 +148,19 @@ footer {
 
 /* Styles Based on Each Page */
 
+/* Homepage */
+.main-page {
+    max-width: 1200px;
+    padding: 0 20px;
+    font-family: sans-serif;
+}
+
 /* === Main Homepage Links === */
 .homepage-links {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
 }
 
 .link-card {
@@ -245,7 +243,7 @@ footer {
 
 .project-directory {
     max-width: 1200px;
-    margin: 40px auto;
+    
     padding: 0 20px;
     font-family: sans-serif;
 }
