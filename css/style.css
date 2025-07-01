@@ -156,8 +156,9 @@ footer {
 .homepage-links {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 20px 0;
+    margin-top: 40px;
 }
 
 .link-card {
