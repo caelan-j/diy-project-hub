@@ -152,11 +152,9 @@ footer {
     font-family: sans-serif;
 }
 
-}
 /* === Main Homepage Links === */
 .homepage-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
     gap: 20px;
     justify-content: center;
     padding: 20px 0;
