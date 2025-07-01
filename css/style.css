@@ -259,6 +259,30 @@ footer {
     padding: 20px 0;
 }
 
+/* Project Card Categories */
+.card-wrapper .project-card {
+    display: none;
+}
+
+.card-wrapper.show-all .project-card {
+    display: block;
+}
+
+.card-wrapper .project-card.visible {
+    display: block;
+}
+
+.show-more {
+    margin: 10px auto;
+    display: block;
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .project-card {
     background-color: #fff;
     border: 1px solid #ddd;

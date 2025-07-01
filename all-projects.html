@@ -22,31 +22,59 @@
 
         <section class="project-grid">
 
-            <!-- Project Card 1 -->
-            <a href="projects/garden-bed.html"
-               class="project-card"
-               data-title="raised garden bed"
-               data-category="beginner"
-               data-tags="outdoor,woodworking">
-                <img src="images/garden-bed.jpg" alt="Raised Garden Bed" />
-                <div class="card-content">
-                    <h2>Raised Garden Bed</h2>
-                    <p>Beginner | 2–3 hrs</p>
+            <!-- Beginner projects group -->
+            <section class="project-category">
+                <h2>Beginner Projects</h2>
+                <div class="card-wrapper" data-limit="3">
+                    <!-- Project Card 1 -->
+                    <a href="projects/garden-bed.html"
+                       class="project-card"
+                       data-title="raised garden bed"
+                       data-category="beginner"
+                       data-tags="outdoor,woodworking">
+                        <img src="images/garden-bed.jpg" alt="Raised Garden Bed" />
+                        <div class="card-content">
+                            <h2>Raised Garden Bed</h2>
+                            <p>Beginner | 2–3 hrs</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
+                <button class="show-more">Show More</button>
+            </section>
 
-            <!-- Project Card 2 -->
-            <a href="projects/firepit.html"
-               class="project-card"
-               data-title="backyard fire pit"
-               data-category="intermediate"
-               data-tags="outdoor,woodworking">
-                <img src="images/firepit.jpg" alt="Backyard Fire Pit">
-                <div class="card-content">
-                    <h2>Backyard Fire Pit</h2>
-                    <p>Intermediate | 4–5 hrs</p>
+            <!-- Intermediate projects group -->
+            <section class="project-category">
+                <h2>Intermediate Projects</h2>
+                <div class="card-wrapper" data-limit="3">
+                    <!-- Project Card 2 -->
+                    <a href="projects/firepit.html"
+                       class="project-card"
+                       data-title="backyard fire pit"
+                       data-category="intermediate"
+                       data-tags="outdoor,woodworking">
+                        <img src="images/firepit.jpg" alt="Backyard Fire Pit">
+                        <div class="card-content">
+                            <h2>Backyard Fire Pit</h2>
+                            <p>Intermediate | 4–5 hrs</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
+                <button class="show-more">Show More</button>
+            </section>
+
+            <!-- Advanced projects group -->
+            <section class="project-category">
+                <h2>Advanced Projects</h2>
+                <div class="card-wrapper" data-limit="3">
+                    <!-- Project cards go here -->
+                    <div class="project-card">...</div>
+                    <div class="project-card">...</div>
+                    <div class="project-card">...</div>
+                    <div class="project-card">...</div> <!-- Hidden initially -->
+                    <div class="project-card">...</div>
+                </div>
+                <button class="show-more">Show More</button>
+            </section>
 
         </section>
     </main>
@@ -79,6 +107,29 @@
                 const matchesTag = selectedTag === "" || tags.includes(selectedTag);
 
                 card.style.display = (matchesSearch && matchesTag) ? "block" : "none";
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".project-category");
+
+            sections.forEach(section => {
+                const wrapper = section.querySelector(".card-wrapper");
+                const cards = wrapper.querySelectorAll(".project-card");
+                const limit = parseInt(wrapper.dataset.limit, 10);
+                const showMoreBtn = section.querySelector(".show-more");
+
+                // Show initial cards
+                cards.forEach((card, i) => {
+                    if (i < limit) card.classList.add("visible");
+                });
+
+                showMoreBtn.addEventListener("click", () => {
+                    wrapper.classList.add("show-all");
+                    showMoreBtn.style.display = "none";
+                });
             });
         });
     </script>
