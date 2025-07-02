@@ -334,6 +334,11 @@ footer {
     transition: transform 0.2s;
 }
 
+    .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
 
 .project-card:hover {
     transform: scale(1.01);
