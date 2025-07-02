@@ -334,10 +334,6 @@ footer {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-    .project-list-item h2 {
-        margin-top: 0;
-    }
-
     .project-list-item a {
         display: inline-block;
         margin-top: 0.5rem;
@@ -354,10 +350,14 @@ footer {
         object-fit: cover;
     }
 
-.project-list-item:hover {
-    transform: scale(1.01);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+    .project-list-item:hover {
+        transform: scale(1.01);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .list-item-content h2 {
+        margin-top: 0;
+    }
 
 /* Tool Packages Page */
 
