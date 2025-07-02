@@ -355,18 +355,35 @@ footer {
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-.list-item-content h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+list-item-content {
+    padding: 15px;
 }
 
-.list-item-content p {
-    color: #666;
-    font-size: 0.9rem;
-}
+    .list-item-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
 
+    .list-item-content p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+
+<section class="product-list" >
+
+<a href="projects/garden-bed.html"
+class="project-list-item"
+data-title="raised garden bed"
+data-category="beginner"
+data-tags="outdoor,woodworking" >
+<img src="images/garden-bed.jpg" alt="Raised Garden Bed" / >
+<div class="list-item-content" >
+<h2 > Raised Garden Bed</h2 >
+<p > Beginner | 2–3 hrs</p >
+</div >
+</a >
 /* Tool Packages Page */
-
 .tool-package-directory {
     max-width: 1000px;
     margin: 0 auto;
