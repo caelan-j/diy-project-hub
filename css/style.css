@@ -329,6 +329,7 @@ footer {
 .project-list-item {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
     background: white;
     padding: 1.5rem;
@@ -349,7 +350,6 @@ footer {
 
     .project-list-item img {
         width: 20%;
-        height: 50px;
         flex-shrink: 0;
         object-fit: cover;
     }
