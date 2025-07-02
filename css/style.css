@@ -320,27 +320,41 @@ footer {
     }
 
 /* Project list */
-.pruduct-list {
-
+.product-list {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
 }
 
 .project-list-item {
     background: white;
     padding: 1.5rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.2s;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-    .project-card img {
-        width: 100%;
-        height: 180px;
+    .project-list-item h2 {
+        margin-top: 0;
+    }
+
+    .project-list-item a {
+        display: inline-block;
+        margin-top: 0.5rem;
+        background: #00796b;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .project-list-item img {
+        width: 20%;
+        height: 50px;
         object-fit: cover;
     }
 
-.project-card:hover {
+.project-list-item:hover {
     transform: scale(1.01);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
