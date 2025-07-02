@@ -355,9 +355,15 @@ footer {
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .list-item-content h2 {
-        margin-top: 0;
-    }
+.list-item-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.list-item-content p {
+    color: #666;
+    font-size: 0.9rem;
+}
 
 /* Tool Packages Page */
 
