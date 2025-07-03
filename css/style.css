@@ -335,6 +335,7 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    gap: 1rem;
     background: white;
     text-decoration: none;
     color: inherit;
@@ -370,7 +371,6 @@ footer {
 
 .list-item-content {
     padding:5px;
-    background-color: aqua;
 }
 
     .list-item-content h2 {
