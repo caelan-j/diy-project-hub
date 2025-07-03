@@ -5,7 +5,7 @@
     background: #f8f8f8;
 }
 
-header {
+.site-header {
     background-image: url("../images/wood-grain.jpg");
     background-size: cover;
     background-position: center;
