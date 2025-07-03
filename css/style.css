@@ -326,7 +326,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     padding: 2rem;
-    max-width: 900px;
+    max-width: 400px;
     margin: auto;
 }
 
