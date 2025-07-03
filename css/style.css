@@ -6,7 +6,7 @@
 }
 
 header {
-    background: #2e7d32;
+    background-image: url("images/wood-grain.jpg");
     color: white;
     padding: 2rem;
     text-align: center;
@@ -327,12 +327,13 @@ footer {
 }
 
 .project-list-item {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     background: white;
     text-decoration: none;
+    color: inherit;
     padding: 1.5rem;
     margin-bottom: 1rem;
     border-radius: 8px;
