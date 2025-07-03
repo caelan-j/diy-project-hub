@@ -6,12 +6,15 @@
 }
 
 header {
-    background-image: url('images/wood-grain.jpg');
+    background-image: url("../images/wood-grain.jpg");
     background-size: cover;
-    color: white;
-    padding: 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
     text-align: center;
+    color: white;
 }
+
 
 /* NAVBAR STYLES */
 .navbar {
