@@ -323,6 +323,8 @@ footer {
 
 /* Project list */
 .product-list {
+    display: flex;
+    flex-wrap: wrap;
     padding: 2rem;
     max-width: 900px;
     margin: auto;
