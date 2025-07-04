@@ -324,50 +324,53 @@ footer {
 /* Project list */
 .project-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
     align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
 }
 
 .project-list-item {
     display: flex;
-    flex-wrap: nowrap;
-    max-width: 250px;
-    max-height: 150px;
-    margin: auto;
+    align-items: center;
+    background: white;
+    max-width: 700px;
+    width: 100%;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     color: inherit;
     text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 1rem;
 }
-
-    .project-list-item a {
-        
-    }
-
-    .project-list-item img {
-        max-width: 40%;
-        flex-shrink: 0;
-    }
 
     .project-list-item:hover {
         transform: scale(1.01);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .project-list-item img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+        flex-shrink: 0;
     }
 
 .list-item-content {
-   
+    flex: 1;
 }
 
     .list-item-content h2 {
         font-size: 1.2rem;
-        margin-bottom: 0.5rem;
+        margin: 0 0 0.5rem;
     }
 
     .list-item-content p {
         color: #666;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        margin: 0;
     }
 
 /* Tool Packages Page */
