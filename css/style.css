@@ -354,7 +354,8 @@ footer {
     }
 
     .project-list-item img {
-        
+        width: 30%;
+        flex-shrink: 0;
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 0.75rem;
