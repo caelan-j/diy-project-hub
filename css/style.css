@@ -323,15 +323,6 @@ footer {
 
 /* Project list */
 .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-list-item {
     display: flex;
     flex-wrap: nowrap;
     background: white;
@@ -345,14 +336,25 @@ footer {
     width: 250px;
 }
 
+.project-list-item {
+    
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
     .project-list-item:hover {
         transform: scale(1.02);
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .project-list-item img {
-        width: 30%;
-        flex-shrink: 0;
+        
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 0.75rem;
