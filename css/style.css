@@ -334,6 +334,7 @@ footer {
 .project-list-item {
     display: flex;
     flex-wrap: nowrap;
+    align-content: center;
     background: white;
     padding: 1rem;
     border-radius: 8px;
@@ -341,8 +342,7 @@ footer {
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 100px;
-    width: 250px;
+    
 }
 
     .project-list-item:hover {
@@ -357,8 +357,7 @@ footer {
         border-radius: 4px;
         margin-bottom: 0.75rem;
     }
-    }
-
+    
 .list-item-content {
     flex: 1;
 }
