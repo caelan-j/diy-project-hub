@@ -247,11 +247,11 @@ footer {
 }
 
 .card-wrapper.show-all .project-card {
-    display: block;
+    display: grid;
 }
 
 .card-wrapper .project-card.visible {
-    display: block;
+    display: grid;
 }
 
 .show-more {
@@ -266,7 +266,7 @@ footer {
 }
 
 .project-card {
-    background-color: blue;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
     overflow: hidden;
