@@ -286,7 +286,7 @@ footer {
     color: inherit;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
-    max-width: 300px;
+    width: 300px;
 }
 
     .project-card:hover {
