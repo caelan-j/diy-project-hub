@@ -8,31 +8,25 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+    <div class="login-page">
+        <!-- Navbar -->
+        <div id="navbar"></div>
 
-    <!-- Navbar -->
-    <div id="navbar"></div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <input type="email" placeholder="Email" name="email" required />
+                <input type="password" placeholder="Password" name="password" required />
+                <button type="submit">Login</button>
+                <p class="signup-text">Don't have an account? <a href="/signup">Sign up</a></p>
+            </form>
+        </div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <h1>DIY Project Hub</h1>
-    </header>
+        <!-- Footer -->
+        <div id="footer"></div>
 
-
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="/login" method="POST">
-            <input type="email" placeholder="Email" name="email" required />
-            <input type="password" placeholder="Password" name="password" required />
-            <button type="submit">Login</button>
-            <p class="signup-text">Don't have an account? <a href="/signup">Sign up</a></p>
-        </form>
+        <!-- Java for layout and search bar -->
+        <script type="module" src="js/init.js"></script>
     </div>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-
-    <!-- Java for layout and search bar -->
-    <script type="module" src="js/init.js"></script>
-
 </body>
 </html>
