@@ -4,6 +4,7 @@
     padding: 0;
     background: #f8f8f8;
     width:100%;
+    background-color: pink;
 }
 
 .site-header {
@@ -22,6 +23,7 @@
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     position: sticky;
+    margin: 0;
     top: 0;
     z-index: 999;
     width: 100%;
