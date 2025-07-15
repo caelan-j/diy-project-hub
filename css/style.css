@@ -26,7 +26,6 @@
     top: 0;
     z-index: 999;
     width: 100%;
-    background-color: blue;
 }
 
 .navbar-container {
@@ -35,7 +34,6 @@
     align-items: center;
     width: 90%;
     margin: 0 auto;
-    background-color: green;
 }
 
 .logo {
@@ -49,7 +47,6 @@
     display: flex;
     list-style: none;
     gap: 20px;
-    background-color:orange;
 }
 
     .nav-links a {
